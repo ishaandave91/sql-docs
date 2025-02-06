@@ -31,6 +31,7 @@ monikerRange: "=azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||
 |retention_period|**int**|If autocleanup is being used, the retention period specifies how long the change tracking data is kept in the database.|  
 |retention_period_units_desc|**nvarchar(60)**|Specifies the description of the retention period:<br /><br /> Minutes<br /><br /> Hours<br /><br /> Days|  
 |retention_period_units|**tinyint**|Unit of time for the retention period:<br /><br /> 1 = Minutes<br /><br /> 2 = Hours<br /><br /> 3 = Days|  
+|max_cleanup_version|**bigint**|Specifies the highest version number of data that should be kept during a cleanup process, essentially defining the cut-off point for deleting older data within a temporal table or change tracking system, where only data exceeding this version is removed.|
   
 ## Permissions  
  The same permission checks are made for sys.change_tracking_databases as are made for sys.databases. If the caller of sys.change_tracking_databases is not the owner of the database, the minimum permissions that are required to see the corresponding row are ALTER ANY DATABASE or VIEW ANY DATABASE server-level permission, or CREATE DATABASE permission in the master database or current database.  
